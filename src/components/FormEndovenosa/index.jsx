@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { BsArrowLeft } from "react-icons/bs"
-import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Gotejamento(){
+export default function FormEndovenosa(){
     const [dataCalc, setdataCalc] = useState({
         quantidade: "",
         tempo: "",
@@ -20,8 +18,8 @@ export default function Gotejamento(){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (dataCalc.tempo === "0" || dataCalc.quantidade === "0"){
-            toast.error("0 não é um número válido!"),{
+        if (Number(dataCalc.tempo) <= 0 || Number(dataCalc.quantidade) <= 0){
+            toast.error("Informe números positivos e maiores que 0!"),{
                 position: toast.POSITION.TOP_CENTER
             }
             return
@@ -63,19 +61,10 @@ export default function Gotejamento(){
 
 
     return(
-        <div className="w-full h-screen bg-verde">
+        <>
             <ToastContainer/>
-            <div className="relative flex flex-col items-center">
-                <Link to="/" aria-label="Voltar">
-                    <BsArrowLeft size={30} aria-hidden="true" className="absolute left-8 top-8 text-white"/>
-                </Link>
-                <div className="flex flex-col items-center mt-20 mb-10">
-                    <img src="./gotejamento2.svg"></img>
-                    <h1 className="text-white font-bold text-4xl">Gotejamento</h1>
-                </div>
-            </div>
-            <div className="bg-white h-full rounded-t-[2.5rem] p-8">
-                <form onSubmit={handleSubmit} className="flex flex-col gap-y-4">
+            <div>
+                {/* <form onSubmit={handleSubmit} className="flex flex-col gap-y-4">
                     <div>
                         <label className="font-semibold">Volume do medicamento</label>
                         <div className="flex items-end gap-x-2">
@@ -127,8 +116,8 @@ export default function Gotejamento(){
                                 <span>Macrogotas por minuto</span>
                             </div>
                         </div>
-                    )}
+                    )} */}
             </div>
-        </div>
+        </>
     )
 }

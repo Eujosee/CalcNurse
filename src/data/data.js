@@ -1,52 +1,62 @@
 const data = [
   {
     nome: "Gotejamento",
-    img: "./gotejamento.svg",
+    imggreen: "/iconsgreen/gotejamento.svg",
+    imgwhite: "/iconswhite/gotejamento.svg",
     to: "gotejamento",
   },
   {
     nome: "Medicação endovenosa",
-    img: "./endovenosa.svg",
+    imggreen: "/iconsgreen/endovenosa.svg",
+    imgwhite: "/iconswhite/endovenosa.svg",
     to: "endovenosa",
   },
   {
     nome: "Transformação de soro",
-    img: "./soro.svg",
+    imggreen: "/iconsgreen/soro.svg",
+    imgwhite: "/iconswhite/soro.svg",
     to: "soro",
   },
   {
     nome: "Insulina / Penicilina",
-    img: "./insulina.svg",
+    imggreen: "/iconsgreen/insulina.svg",
+    imgwhite: "/iconswhite/insulina.svg",
     to: "insulina"
   },
   {
     nome: "Regra de 3",
-    img: "./calculo.svg",
+    imggreen: "/iconsgreen/calculo.svg",
+    imgwhite: "/iconswhite/calculo.svg",
     to: "regra",
   },
   {
     nome: "Concentração gotas / comprimidos",
-    img: "./concentracao.svg",
+    imggreen: "/iconsgreen/concentracao.svg",
+    imgwhite: "/iconswhite/concentracao.svg",
     to: "concentracao",
   },
   {
     nome: "Permanganato de potássio",
-    img: "./permanganato.svg",
+    imggreen: "/iconsgreen/permanganato.svg",
+    imgwhite: "/iconswhite/permanganato.svg",
     to: "permanganato",
   },
   {
     nome: "Cálculo em pediatria",
-    img: "./pediatra.svg",
+    imggreen: "/iconsgreen/pediatra.svg",
+    imgwhite: "/iconswhite/pediatra.svg",
     to: "pediatria",
   },
   {
     nome: "Diluição de medicamentos",
-    img: "./diluicao.svg",
+    imggreen: "/iconsgreen/diluicao.svg",
+    imgwhite: "/iconswhite/diluicao.svg",
     to: "diluicao",
   },
   {
     nome: "Conversão de unidades",
-    img: "./conversao.svg",
+    imggreen: "/iconsgreen/conversao.svg",
+    imgwhite: "/iconswhite/conversao.svg",
     to: "conversao",
   },
 ];
