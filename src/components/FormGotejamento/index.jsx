@@ -18,10 +18,17 @@ export default function FormGotejamento(){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (Number(dataCalc.tempo) <= 0 || Number(dataCalc.quantidade) <= 0){
-            toast.error("Informe números positivos e maiores que 0!"),{
-                position: toast.POSITION.TOP_CENTER
+        try {
+            for (let value of Object.keys(dataCalc)){
+                if(dataCalc[value] <= 0){
+                    throw new Error("Valor inválido")
+                }
             }
+        } catch (error) {
+            toast.error("Informe números positivos e maiores que 0!",
+                  {
+                    position: toast.POSITION.TOP_CENTER,
+            });
             return
         }
 

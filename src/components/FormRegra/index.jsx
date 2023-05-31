@@ -18,13 +18,21 @@ export default function FormRegra (){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (Number(dataCalc.valor1) === 0 || Number(dataCalc.valor2) === 0 || Number(dataCalc.valor3) === 0){
-            toast.error("Informe números diferentes 0!"),{
-                position: toast.POSITION.TOP_CENTER
+        try {
+            for (let value of Object.keys(dataCalc)){
+                if(dataCalc[value] === 0){
+                    throw new Error("Valor inválido")
+                }
             }
+        } catch (error) {
+            toast.error("Informe números diferentes que 0!",
+                  {
+                    position: toast.POSITION.TOP_CENTER,
+            });
             return
         }
-        setResult(Calcular(dataCalc))
+
+        setResult(calcular(dataCalc))
     }
     
     const resetForm = () => {
@@ -36,7 +44,7 @@ export default function FormRegra (){
         setResult("X")
     }
 
-    function Calcular(dataCalc){
+    function calcular(dataCalc){
         if (isInversa === true){
             const result = (Number(dataCalc.valor2) * Number(dataCalc.valor1)) / Number(dataCalc.valor3)
             return result.toFixed(3).replace('.', ',')
